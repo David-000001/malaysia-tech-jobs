@@ -670,80 +670,74 @@ with tab_scraper:
 # TAB 5: PORTFOLIO / HIRE ME
 with tab_portfolio:
     st.markdown("### 💼 Candidate Portfolio ('Hire Me')")
-    
+
     pcol1, pcol2 = st.columns([1, 2])
-    
     with pcol1:
         st.markdown(
-            f"<div class='kpi-card' style='text-align:center; padding: 30px;'>"
-            f"  <h2 style='color:#2dd4bf; margin-bottom: 2px;'>Ahmad Danish</h2>"
-            f"  <p style='color:#94a3b8; margin-top:0px;'>Computer Science Student (Software Eng / Data)</p>"
-            f"  <hr style='border-color: rgba(255,255,255,0.05);'>"
-            f"  <p style='font-size:0.9rem;'>Specializing in high-performance web systems, cloud architectures, and intelligence dashboards in Kuala Lumpur & Selangor.</p>"
-            f"  <div style='margin: 15px 0;'>"
-            f"    <span class='tag tag-skill'>Python</span>"
-            f"    <span class='tag tag-skill'>React</span>"
-            f"    <span class='tag tag-skill'>Laravel</span>"
-            f"    <span class='tag tag-skill'>AWS</span>"
-            f"    <span class='tag tag-skill'>Docker</span>"
-            f"    <span class='tag tag-skill'>SQL</span>"
-            f"  </div>"
-            f"  <div style='text-align: center; margin-top: 20px;'>"
-            f"    <a href='https://linkedin.com' target='_blank'><button style='width:80%; background-color:#0d9488; color:white; border:none; padding:8px 0; border-radius:6px; cursor:pointer; font-weight:600; margin-bottom:10px;'>Connect on LinkedIn</button></a>"
-            f"    <a href='https://github.com' target='_blank'><button style='width:80%; background-color:#1e293b; color:#2dd4bf; border: 1px solid #0d9488; padding:8px 0; border-radius:6px; cursor:pointer;'>GitHub Profile</button></a>"
-            f"  </div>"
-            f"</div>", 
+            """
+            <div style='background: linear-gradient(135deg, #0d9488, #0f172a); border-radius: 16px; padding: 28px; text-align: center; border: 1px solid rgba(13,148,136,0.3);'>
+                <h2 style='color: #2dd4bf; margin-bottom: 4px; font-size: 1.6rem;'>AVIJIT CHANDRA DEY</h2>
+                <p style='color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px;'>AI Engineer</p>
+                <hr style='border-color: rgba(255,255,255,0.1); margin: 12px 0;'>
+                <p style='color: #cbd5e1; font-size: 0.85rem; line-height: 1.6;'>
+                    Specialising in Machine Learning, Deep Learning, Computer Vision, and AI solutions.
+                </p>
+                <div style='margin-top: 16px;'>
+                    <span class='tag tag-skill'>ML</span>
+                    <span class='tag tag-skill'>DL</span>
+                    <span class='tag tag-skill'>CVPR</span>
+                    <span class='tag tag-skill'>AI</span>
+                    <span class='tag tag-skill'>Python</span>
+                    <span class='tag tag-skill'>SQL</span>
+                </div>
+            </div>
+            """,
             unsafe_allow_html=True
         )
-        
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("🔗 Connect on LinkedIn", use_container_width=True):
+            st.markdown("[Open LinkedIn](https://www.linkedin.com/in/avijit-chandra-dey-340b61294/)", unsafe_allow_html=True)
+        st.markdown(
+            "<a href='https://www.linkedin.com/in/avijit-chandra-dey-340b61294/' target='_blank' style='display:block; text-align:center; margin-top:-8px; color:#64748b; font-size:0.75rem;'>https://linkedin.com/in/avijit-chandra-dey-340b61294</a>",
+            unsafe_allow_html=True
+        )
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("🐝 GitHub Profile", use_container_width=True):
+            st.markdown("[Open GitHub](https://github.com/David-000001)", unsafe_allow_html=True)
+        st.markdown(
+            "<a href='https://github.com/David-000001' target='_blank' style='display:block; text-align:center; margin-top:-8px; color:#64748b; font-size:0.75rem;'>github.com/David-000001</a>",
+            unsafe_allow_html=True
+        )
+
     with pcol2:
         st.markdown("#### Technical Capabilities & Focus")
         st.write("""
-        I am a final-year Computer Science student at **Universiti Malaya (UM)** with a focus on building production-ready analytical pipelines and robust web structures. 
-        Through internships and academic projects, I have developed deep competencies in data harvesting (polite crawlers, logging pipelines) and full-stack development.
-        
-        ##### Key Strengths:
-        - **Data Engineering**: Extraction & scraping (requests, BeautifulSoup, API hooks), database modeling (SQLite, PostgreSQL), and spatial distribution analysis.
-        - **NLP & Analysis**: Keyword extraction, document parsing, matching algorithms (spaCy, tokenization), and interactive analytics (Plotly, Streamlit).
-        - **Architecture**: Containerized deployments (Docker), version management (Git), cloud infrastructure (AWS S3, EC2).
+B.CS (AI) Student at Universiti Malaya | Building Practical Projects in Python, SQL, Java, and Data Analysis | Open to Internship Roles in KL.
         """)
-        
-        # Download resume placeholder
-        resume_content = """
-        AHMAD DANISH - RESUME
-        Kuala Lumpur, Malaysia | danish.dev@email.com | +6012-3456789 | linkedin.com/in/danish-placeholder
-        
-        SUMMARY:
-        Energetic Computer Science graduate from Universiti Malaya seeking Software Engineer / Data Roles. Expert in Python, PHP/Laravel, React, AWS and Docker.
-        
-        EDUCATION:
-        - Bachelor of Computer Science, Universiti Malaya (UM) | CGPA: 3.85 | Graduation: Dec 2026
-        
-        EXPERIENCE:
-        - Grab Malaysia - Software Engineering Intern (Jan 2026 - June 2026)
-          Developed payment APIs using Python and Docker, optimizing latency by 15%.
-          Collaborated on microservice structures and implemented robust test coverage.
-        
-        CORE PROJECTS:
-        - Tech Market IQ Dashboard: Live job postings aggregator with spaCy resume matching and location density maps.
-        
-        TECHNICAL SKILLS:
-        - Python, PHP, JS, React, Laravel, SQL, Docker, AWS, Git.
-        """
-        
-        st.download_button(
-            label="📥 Download 1-Page Curriculum Vitae (CV)",
-            data=resume_content,
-            file_name="ahmad_danish_cv.txt",
-            mime="text/plain",
-            help="Download a text formatted copy of Ahmad Danish's professional resume."
+
+        st.markdown("##### Key Strengths:")
+        st.markdown("""
+- **Brainstormer:** Approaches problems creatively, generating innovative solutions and ideas across technical and analytical challenges.
+- **Hard Worker:** Committed to delivering high-quality results, consistently going the extra mile on every project.
+- **Fast Learner:** Quickly picks up new technologies, frameworks, and concepts — from ML pipelines to full-stack deployments.
+        """)
+
+        # CV Download
+        st.markdown("---")
+        st.markdown("##### 📄 Curriculum Vitae")
+        st.markdown(
+            """
+            <a href='https://drive.google.com/file/d/1f6sYe56u0_sQcRYkvAjXUVnvqjIfFBZl/view?usp=sharing' target='_blank'>
+                <button style='background:#0d9488; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:0.9rem; width:100%;'>
+                    📂 Download / View 1-Page CV
+                </button>
+            </a>
+            """,
+            unsafe_allow_html=True
         )
 
-# Footer
-st.markdown("---")
-st.markdown(
-    "<p style='text-align: center; color: #64748b; font-size: 0.8rem;'>"
-    "Malaysia Tech Job Market Dashboard © 2026 | Built for Malaysia Tech Talent Evaluation"
-    "</p>", 
-    unsafe_allow_html=True
-)
+    st.markdown("---")
+    st.markdown(
+        "<p style='text-align:center; color:#64748b; font-size:0.8rem;'>Malaysia Tech Job Market Dashboard &copy; 2026 | Built for Malaysia Tech Talent Evaluation</p>",
+        unsafe_allow_html=True
+    )
