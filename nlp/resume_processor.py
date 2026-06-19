@@ -2,19 +2,13 @@ import io
 import re
 import PyPDF2
 
-# Attempt to load spacy
+# Attempt to load spacy (model installed via requirements.txt wheel URL)
 nlp = None
 try:
     import spacy
-    try:
-        nlp = spacy.load("en_core_web_sm")
-    except OSError:
-        # Try to download if not present
-        import spacy.cli
-        spacy.cli.download("en_core_web_sm")
-        nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 except Exception as e:
-    print(f"Warning: Could not load or download spaCy. Falling back to regex parser. Detail: {e}")
+    print(f"Warning: Could not load spaCy model. Falling back to regex parser. Detail: {e}")
 
 # Skill directories (Malaysian focused)
 CURATED_SKILLS = {
